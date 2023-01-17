@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  //font-family: $primaryFontRegular, sans-serif;
+  font-style: normal;
+  //font-size: $bsFontSize;
+  //color: $bsTextColor;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  //letter-spacing: $bsLetterSpacing;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
