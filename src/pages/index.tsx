@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Home = (): JSX.Element => (
-  <div>
-    Hello, NextJS!asdsadasdasdasdasdaHello, NextJS!asdsadasdasdasdasdaHello,
-    NextJS!asdsadasdasdasdasdaHello, NextJS!asdsadasdasdasdasdaHello,
-    NextJS!asdsadasdasdasdasdaHello, NextJS!asdsadasdasdasdasdaHello,
-    NextJS!asdsadasdasdasdasdaHello, NextJS!asdsadasdasdasdasdaHello,
-    NextJS!asdsadasdasdasdasdaHello, NextJS!asdsadasdasdasdasdaHello,
-    NextJS!asdsadasdasdasdasdaHello, NextJS!asdsadasdasdasdasda
-  </div>
-);
+import { makeHighlightListFetchingSelector } from '@store/highlight/selectors';
+
+import { useAppSelector } from '../hooks/useRedux';
+
+const Home = (): JSX.Element => {
+  const highlight = useAppSelector(makeHighlightListFetchingSelector);
+
+  useEffect(() => {
+    console.log('highlight =>', highlight);
+  }, []);
+  return <div>Hello, NextJS!</div>;
+};
 
 export default Home;

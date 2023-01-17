@@ -27,6 +27,9 @@
       "es2017"
     ],
     "paths": {
+      //      "@reduxjs/*": [
+      //        "./node_modules/reduxjs/*"
+      //      ],
       "@components/*": [
         "./src/components/*"
       ],
@@ -52,6 +55,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
+    //    "isolatedModules": true,
+    "incremental": true,
     "isolatedModules": true
   },
   "exclude": [
@@ -70,6 +75,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-  , "src/pages/profile/author/.[id]/index.ts"  ]
+    "**/*.tsx",
+    "src/pages/profile/author/.[id]/index.ts"
+  ]
 }
