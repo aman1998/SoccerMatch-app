@@ -1,3 +1,3 @@
 export interface ILogoProps {
-  text: boolean;
+  showText?: boolean;
 }

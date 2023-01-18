@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
 import { ILogoProps } from '@components/Logo/types';
+import { sitename } from '@components/Layout/consts';
 
-const Logo: FC<ILogoProps> = ({ text = true }) => (
+const Logo: FC<ILogoProps> = ({ showText = true }) => (
   <div className="logo-wrapper">
     <div className="logo">
       <div className="logo--top">
@@ -14,9 +15,9 @@ const Logo: FC<ILogoProps> = ({ text = true }) => (
         <div className="logo__circle logo__circle--right" />
       </div>
     </div>
-    {text && (
+    {showText && (
       <div className="logo-text">
-        <b>SoccerMatch</b>
+        <b>{sitename}</b>
         <br />
         .online
       </div>

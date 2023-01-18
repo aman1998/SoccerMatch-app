@@ -1,1 +1,1 @@
-export const sitename = 'soccermatch';
+export const sitename = 'Highlights';
