@@ -50,6 +50,9 @@
       ],
       "@utils/*": [
         "./src/utils/*"
+      ],
+      "@public/*": [
+        "./src/public/*"
       ]
     },
     "forceConsistentCasingInFileNames": true,
