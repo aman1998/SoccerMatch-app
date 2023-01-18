@@ -1,0 +1,39 @@
+.logo {
+  margin-right: 10px;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    width: 31px;
+  }
+  &--top {
+    margin-bottom: 3px;
+  }
+  &__circle {
+    height: 14px;
+    width: 14px;
+    background: $main;
+    border-radius: 50%;
+    > div {
+      height: 20px;
+      width: 12px;
+    }
+    &--left {
+      border-radius: 50% 2px 2px 50%;
+    }
+    &--right {
+      border-radius: 2px 50% 50% 2px;
+    }
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 16px;
+  b {
+    font-size: 18px;
+  }
+}

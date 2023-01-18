@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 
-import '@common/styles/layout.scss';
-
 import { wrapper } from '@store/index';
+
+import '../styles/main.scss';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const { store } = wrapper.useWrappedStore(pageProps);

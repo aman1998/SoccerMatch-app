@@ -1,16 +1,7 @@
-import React, { useEffect } from 'react';
+import MainPage from '@containers/Main';
 
-import { makeHighlightListFetchingSelector } from '@store/highlight/selectors';
+MainPage.getInitialProps = () => ({
+  title: 'store',
+});
 
-import { useAppSelector } from '../hooks/useRedux';
-
-const Home = (): JSX.Element => {
-  const highlight = useAppSelector(makeHighlightListFetchingSelector);
-
-  useEffect(() => {
-    console.log('highlight =>', highlight);
-  }, []);
-  return <div>Hello, NextJS!</div>;
-};
-
-export default Home;
+export default MainPage;

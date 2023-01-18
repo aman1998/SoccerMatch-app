@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  //padding: 0 16px;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: $bg-main;
+  left: 0;
+  z-index: -1;
+}
