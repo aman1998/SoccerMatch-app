@@ -1,0 +1,31 @@
+.navigation {
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+    &--active {
+      background: $green;
+      a {
+        color: $black2;
+      }
+    }
+  }
+  &__link {
+    color: $white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: 0.3s;
+    outline: none !important;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
