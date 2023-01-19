@@ -1,23 +1,20 @@
 import { FC } from 'react';
-// import Image from 'next/image';
-//
-// import ImageSrc from '@public/images/hq720.webp';
+import Image from 'next/image';
+
+const url =
+  // eslint-disable-next-line max-len
+  'https://i.ytimg.com/vi/7bSYiVzyK_M/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAKSYvKBW1xRHrVh4VPCzjvnUY5Iw';
 
 const IMac: FC = () => (
-  <div className="imac">
-    <div className="screen">
-      <div className="black-bg">
-        <div className="display">
-          <div className="content">
-            {/*<Image src={ImageSrc} alt="imac" width={480} height={224} />*/}
-          </div>
-        </div>
+  <article className="imac">
+    <div className="imac__header-frame">
+      <div className="imac__display">
+        <Image src={url} fill quality={100} alt="game-cover" className="imac__image" />
       </div>
     </div>
-    <div className="base-container">
-      <div className="top-base"></div>
-    </div>
-  </div>
+    <div className="imac__footer-frame" />
+    <div className="imac__stand" />
+  </article>
 );
 
 export default IMac;

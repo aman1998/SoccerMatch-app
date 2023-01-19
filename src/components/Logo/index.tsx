@@ -3,9 +3,9 @@ import { FC } from 'react';
 import { ILogoProps } from '@components/Logo/types';
 import { sitename } from '@components/Layout/consts';
 
-const Logo: FC<ILogoProps> = ({ showText = true }) => (
+const Logo: FC<ILogoProps> = ({ showText = true, className }) => (
   <div className="logo-wrapper">
-    <div className="logo">
+    <div className={`logo ${className}`}>
       <div className="logo--top">
         <div className="logo__circle logo__circle--left" />
         <div className="logo__circle" />

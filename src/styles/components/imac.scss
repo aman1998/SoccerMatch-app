@@ -1,36 +1,32 @@
 .imac {
-  width: 450px;
+  margin-bottom: 10px;
+  width: 500px;
+  &__header-frame {
+    padding: 10px;
+    height: 290px;
+    width: 100%;
+    background: $black2;
+    border-radius: 10px 10px 0 0;
+  }
+  &__display {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: $gray;
+    opacity: 0.9;
+  }
+  &__footer-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background: $gray;
+    border-radius: 0 0 10px 10px;
+  }
+  &__stand {
+    margin: 0 auto;
+    height: 40px;
+    width: 72px;
+    background: $black2;
+  }
 }
-.screen {
-  width: 100%;
-  height: 290px;
-  background-color: $gray;
-  background: linear-gradient(to bottom right, $gray, $gray);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.black-bg {
-  padding: 10px;
-  height: 244px;
-  background-color: $black2;
-}
-
-.display {
-  margin: 0 auto;
-  background: $gray;
-  height: 100%;
-  width: 100%;
-}
-
-.base-container {
-  width: 116px;
-  margin: 0 auto;
-}
-.top-base {
-  position: absolute;
-  height: 30px;
-  width: 72px;
-  margin: 0 21px;
-  background: $black2;
-}
-
