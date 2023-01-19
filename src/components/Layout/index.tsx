@@ -23,7 +23,9 @@ const Layout: FC<ILayoutProps> = ({ children, title }) => {
                 топ-лиг
               </h1>
               <p className="info__text">Смотрите обзоры ведущих чемпионатов на нашем сайте!</p>
-              <Navigation />
+              <div className="info__navigation">
+                <Navigation />
+              </div>
             </div>
             <IMac />
           </section>
