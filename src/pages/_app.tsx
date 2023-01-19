@@ -16,7 +16,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <title>NextJS App From Scratch</title>
       </Head>
-      <NextNProgress color="#1e9e70" height={1} showOnShallow={true} />
+      <NextNProgress
+        color="#1e9e70"
+        height={1}
+        showOnShallow={true}
+        options={{ showSpinner: false }}
+      />
       <Component {...pageProps} />
     </Provider>
   );
