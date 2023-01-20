@@ -2,19 +2,21 @@
   transition: all 0.3s ease-out;
 }
 
-*::-webkit-scrollbar-thumb {
-  border-radius: 30px;
-  background: linear-gradient(180deg,#292c31 0%,#26282d 100%);
-}
+// comment this styles because screen width changing after get scroll content
 
-*::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-}
-
-*::-webkit-scrollbar-track {
-  background: 0 0;
-}
+//*::-webkit-scrollbar-thumb {
+//  border-radius: 30px;
+//  background: linear-gradient(180deg,#292c31 0%,#26282d 100%);
+//}
+//
+//*::-webkit-scrollbar {
+//  width: 8px;
+//  background-color: transparent;
+//}
+//
+//*::-webkit-scrollbar-track {
+//  background: 0 0;
+//}
 
 .wrapper {
   background: $bg-main;

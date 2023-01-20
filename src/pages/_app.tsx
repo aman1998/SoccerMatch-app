@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import NextNProgress from 'nextjs-progressbar';
@@ -13,9 +12,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <Provider store={store}>
-      <Head>
-        <title>NextJS App From Scratch</title>
-      </Head>
       <NextNProgress
         color="#1e9e70"
         height={1}
