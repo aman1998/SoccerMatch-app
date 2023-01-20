@@ -4,8 +4,16 @@ import Link from 'next/link';
 
 import { ICardProps } from '@components/Card/types';
 
-const Card: FC<ICardProps> = ({ score, url, title, imgUrl, time, league, showScore = true }) => (
-  <Link href={`/video/${url}`} className="card-link">
+const Card: FC<ICardProps> = ({
+  score,
+  embedUrl,
+  title,
+  imgUrl,
+  time,
+  league,
+  showScore = true,
+}) => (
+  <Link href={`/video/${embedUrl}`} className="card-link">
     <div className="card">
       <div className="card__header">
         <div className="card__league">{league}</div>

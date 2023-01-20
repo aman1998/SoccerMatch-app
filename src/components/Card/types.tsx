@@ -1,7 +1,7 @@
 export interface ICardProps {
   title: string;
   score: string;
-  url: string;
+  embedUrl: string;
   imgUrl: string;
   league: string;
   time: string;
