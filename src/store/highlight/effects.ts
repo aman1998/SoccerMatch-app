@@ -3,6 +3,7 @@ import { takeLatest, all, AllEffect, ForkEffect } from 'redux-saga/effects';
 import { getHighlightListFetching } from './reducers';
 
 function* getHighlightList() {
+  // eslint-disable-next-line no-console
   console.log('hello');
 }
 
