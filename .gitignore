@@ -8,4 +8,5 @@ coverage
 .vscode
 .jest
 .env
+.env.local
 out
