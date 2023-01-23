@@ -1,5 +1,5 @@
 export interface ILink {
   id: number;
-  title: string;
+  name: string;
   link: string;
 }

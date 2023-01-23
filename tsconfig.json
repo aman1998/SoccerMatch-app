@@ -27,9 +27,6 @@
       "es2017"
     ],
     "paths": {
-      //      "@reduxjs/*": [
-      //        "./node_modules/reduxjs/*"
-      //      ],
       "@components/*": [
         "./src/components/*"
       ],
@@ -38,6 +35,9 @@
       ],
       "@common/*": [
         "./src/common/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
       ],
       "@store/*": [
         "./src/store/*"
@@ -76,6 +76,7 @@
     "coverage"
   ],
   "include": [
+    "src/**/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

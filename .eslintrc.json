@@ -125,6 +125,11 @@
                         "position": "after"
                     },
                     {
+                        "pattern": "@hooks/**",
+                        "group": "internal",
+                        "position": "after"
+                    },
+                    {
                         "pattern": "@pages/**",
                         "group": "internal",
                         "position": "after"

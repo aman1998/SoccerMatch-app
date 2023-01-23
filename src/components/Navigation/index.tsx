@@ -1,27 +1,49 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { links } from '@components/Navigation/consts';
-import { ILink } from '@components/Navigation/types';
+import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
+
+import { getLeaguesFetching } from '@store/leagues/reducers';
+import { leaguesListDataSelector, leaguesListFetchingSelector } from '@store/leagues/selectors';
+import { ILeaguesData } from '@store/leagues/types';
 
 const Navigation: FC = () => {
   const router = useRouter();
   const { asPath } = router;
+  const dispatch = useAppDispatch();
+
+  const leaguesList = useAppSelector(leaguesListDataSelector);
+  const loading = useAppSelector(leaguesListFetchingSelector);
+
+  useEffect(() => {
+    if (!leaguesList) dispatch(getLeaguesFetching());
+  }, []);
 
   return (
     <nav className="navigation">
       <ul>
-        {links.map((item: ILink) => (
-          <li
-            key={item.id}
-            className={`navigation__item ${asPath === item.link && 'navigation__item--active'}`}
-          >
-            <Link className="navigation__link" href={item.link}>
-              {item.title}
-            </Link>
-          </li>
-        ))}
+        {!loading && leaguesList?.length && (
+          <>
+            <li className={`navigation__item ${asPath === `/` && 'navigation__item--active'}`}>
+              <Link className="navigation__link" href={`/`}>
+                All
+              </Link>
+            </li>
+            {leaguesList.map((item: ILeaguesData) => (
+              <li
+                key={item.name}
+                className={`navigation__item ${
+                  asPath === `/leagues/${item.link}` && 'navigation__item--active'
+                }`}
+              >
+                <Link className="navigation__link" href={`/leagues/${item.link}`}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </>
+        )}
       </ul>
     </nav>
   );

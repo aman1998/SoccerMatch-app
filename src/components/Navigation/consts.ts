@@ -3,32 +3,32 @@ import { ILink } from './types';
 export const links: ILink[] = [
   {
     id: 1,
-    title: 'Все',
+    name: 'Все',
     link: '/',
   },
   {
     id: 2,
-    title: 'Англия',
+    name: 'Англия',
     link: '/epl',
   },
   {
     id: 3,
-    title: 'Испания',
+    name: 'Испания',
     link: '/la-liga',
   },
   {
     id: 4,
-    title: 'Итария',
+    name: 'Итария',
     link: '/seria-a',
   },
   {
     id: 5,
-    title: 'Германия',
+    name: 'Германия',
     link: '/bundesliga',
   },
   {
     id: 6,
-    title: 'Франция',
+    name: 'Франция',
     link: '/league-1',
   },
 ];

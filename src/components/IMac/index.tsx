@@ -9,7 +9,15 @@ const IMac: FC = () => (
   <article className="imac">
     <div className="imac__header-frame">
       <div className="imac__display">
-        <Image src={url} fill quality={100} alt="game-cover" className="imac__image" />
+        <Image
+          src={url}
+          fill
+          quality={100}
+          alt="game-cover"
+          className="imac__image"
+          sizes="(max-width: 100%, width: 100%)"
+          priority
+        />
       </div>
     </div>
     <div className="imac__footer-frame" />

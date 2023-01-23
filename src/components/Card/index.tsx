@@ -24,7 +24,14 @@ const Card: FC<ICardProps> = ({
           {title} {showScore ? score : ''}
         </div>
       </div>
-      <Image src={imgUrl} fill quality={100} alt="game-cover" className="card__image" />
+      <Image
+        src={imgUrl}
+        fill
+        quality={100}
+        alt="game-cover"
+        className="card__image"
+        sizes="(max-width: 100%, width: 100%)"
+      />
       <div className="card__corner">
         <div className="card__arrow">→</div>
       </div>
