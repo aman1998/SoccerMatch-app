@@ -35,10 +35,10 @@ export async function getStaticProps(context: { params: { id: string } }): TCard
   const leagueSnapshot = await getDocs(q);
 
   // @ts-ignore
-  const league = leagueSnapshot.docs.map((doc: any) => doc.data());
+  const highlights = leagueSnapshot.docs.map((doc: any) => doc.data());
 
   return {
-    props: { data: league },
+    props: { data: highlights },
   };
 }
 
