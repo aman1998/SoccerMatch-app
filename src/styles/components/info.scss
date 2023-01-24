@@ -1,24 +1,37 @@
 .info {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 2rem;
+  @media screen and (max-width: $max-md-media) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $max-sm-media) {
+    margin-top: 0;
+  }
+  &__imac-wrapper {
+    @media screen and (max-width: $max-md-media) {
+      margin-top: 12px;
+    }
+  }
   &__left {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
   }
   &__title {
+    margin-top: 2rem;
     font-weight: 600;
-    font-size: 54px;
+    font-size: 3.3rem;
+    @media screen and (max-width: $max-md-media) {
+      margin-top: 0;
+    }
   }
   &__text {
     margin-top: 16px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 140%;
   }
   &__navigation {
     margin-top: auto;
-    margin-bottom: 30px;
   }
 }

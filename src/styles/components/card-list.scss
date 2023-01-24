@@ -3,5 +3,9 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 8px;
+  margin-top: 18px;
   width: 100%;
+  @media screen and (max-width: $max-lg-media) {
+    margin-top: 12px;
+  }
 }

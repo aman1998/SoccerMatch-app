@@ -1,15 +1,16 @@
 .navigation {
+  @media screen and (max-width: $max-md-media) {
+    display: none;
+  }
   ul {
     display: flex;
-    justify-content: space-between;
   }
   &__item {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
     height: 40px;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 10px;
     &--active {
       background: $green;
@@ -19,10 +20,12 @@
     }
   }
   &__link {
+    padding: 8px 16px;
     color: $white;
     opacity: 0.8;
     text-decoration: none;
     transition: 0.3s;
+    cursor: pointer;
     outline: none !important;
     &:hover {
       opacity: 1;

@@ -8,6 +8,8 @@ import { getLeaguesFetching } from '@store/leagues/reducers';
 import { leaguesListDataSelector, leaguesListFetchingSelector } from '@store/leagues/selectors';
 import { ILeaguesData } from '@store/leagues/types';
 
+import { getCountryTranslate } from '@utils/language';
+
 const Navigation: FC = () => {
   const router = useRouter();
   const { asPath } = router;
@@ -27,7 +29,7 @@ const Navigation: FC = () => {
           <>
             <li className={`navigation__item ${asPath === `/` && 'navigation__item--active'}`}>
               <Link className="navigation__link" href={`/`}>
-                All
+                Все
               </Link>
             </li>
             {leaguesList.map((item: ILeaguesData) => (
@@ -38,7 +40,7 @@ const Navigation: FC = () => {
                 }`}
               >
                 <Link className="navigation__link" href={`/leagues/${item.link}`}>
-                  {item.name}
+                  {getCountryTranslate(item.name)}
                 </Link>
               </li>
             ))}

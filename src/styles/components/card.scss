@@ -12,12 +12,15 @@
   justify-content: space-between;
   padding: 10px;
   height: 185px;
-  //width: 320px;
   border-radius: 10px;
   background: $black2;
   color: #fff;
   overflow: hidden;
+  font-size: 16px;
   border: 1px solid $gray;
+  @media screen and (max-width: $max-sm-media) {
+    height: 200px;
+  }
   &__header {
     display: flex;
     justify-content: space-between;

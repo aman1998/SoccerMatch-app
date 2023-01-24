@@ -15,7 +15,9 @@ const Info: FC = () => (
         <Navigation />
       </div>
     </div>
-    <IMac />
+    <div className="info__imac-wrapper">
+      <IMac />
+    </div>
   </section>
 );
 

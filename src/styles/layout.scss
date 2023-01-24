@@ -2,6 +2,22 @@
   transition: all 0.3s ease-out;
 }
 
+html {
+  font-size: $fs-rem-xl;
+  @media screen and (max-width: $max-lg-media) {
+    font-size: $fs-rem-lg;
+  }
+  @media screen and (max-width: $max-md-media) {
+    font-size: $fs-rem-md;
+  }
+  //@media screen and (max-width: $max-sm-media) {
+  //  font-size: $fs-rem-sm;
+  //}
+  //@media screen and (max-width: $max-xs-media) {
+  //  font-size: $fs-rem-xs;
+  //}
+}
+
 // comment this styles because screen width changing after get scroll content
 
 //*::-webkit-scrollbar-thumb {
@@ -17,11 +33,6 @@
 //*::-webkit-scrollbar-track {
 //  background: 0 0;
 //}
-
-.wrapper {
-  background: $bg-main;
-  min-height: 100vh;
-}
 
 .container {
   width: 100%;

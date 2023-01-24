@@ -8,12 +8,10 @@ import Info from '@components/Layout/Info';
 const Layout: FC<ILayoutProps> = ({ children, title, showInfo = true }) => (
   <>
     <Seo seoTitle={title} />
-    <div className="wrapper">
-      <div className="container">
-        <Header />
-        {showInfo && <Info />}
-        <main>{children}</main>
-      </div>
+    <div className="container">
+      <Header />
+      {showInfo && <Info />}
+      <main>{children}</main>
     </div>
   </>
 );
