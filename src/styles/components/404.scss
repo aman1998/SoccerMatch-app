@@ -1,0 +1,13 @@
+.custom404 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &__title {
+    margin-bottom: 8px;
+    font-size: 2rem;
+  }
+  &__text {
+    font-size: 0.875rem;
+  }
+}
