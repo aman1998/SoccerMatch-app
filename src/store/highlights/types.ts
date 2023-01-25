@@ -1,7 +1,7 @@
 export interface IBestHighlightsData {
   embedUrl: string;
   imgUrl: string;
-  score: string;
+  title: string;
 }
 
 export interface IHighlightsData {

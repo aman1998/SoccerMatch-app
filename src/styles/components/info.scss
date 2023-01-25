@@ -8,9 +8,40 @@
   @media screen and (max-width: $max-sm-media) {
     margin-top: 0;
   }
-  &__imac-wrapper {
+  &-imac {
+    position: relative;
     @media screen and (max-width: $max-md-media) {
       margin-top: 12px;
+    }
+    &__title {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      opacity: 1;
+    }
+    &__image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+    &__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      text-decoration: none;
+      color: $font;
+      transition: 0.3s;
+      &:hover {
+        background: $green;
+      }
     }
   }
   &__left {
