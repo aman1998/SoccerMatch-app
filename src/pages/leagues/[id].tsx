@@ -32,6 +32,7 @@ export async function getStaticProps(context: {
   params: { id: string };
 }): TPageProps<ILeaguePageProps> {
   const { id } = context.params;
+
   const leaguesRef = await collection(database, 'highlights');
 
   const q = query(leaguesRef, where('league', '==', id));
