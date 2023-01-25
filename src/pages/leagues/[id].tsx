@@ -1,11 +1,12 @@
 import LeaguePage from '@containers/League';
 import { collection, getDocs, where, query } from 'firebase/firestore';
+import { ILeaguePageProps } from '@containers/League/types';
 
 import { ILeaguesData } from '@store/leagues/types';
 
 import { database } from '../../../firebase-config';
 
-import { TCardStaticProps } from '../../config/types';
+import { TPageProps } from '../../config/types';
 
 export async function getStaticPaths(): Promise<{
   paths: { params: { id: string } }[];
@@ -27,7 +28,9 @@ export async function getStaticPaths(): Promise<{
   };
 }
 
-export async function getStaticProps(context: { params: { id: string } }): TCardStaticProps {
+export async function getStaticProps(context: {
+  params: { id: string };
+}): TPageProps<ILeaguePageProps> {
   const { id } = context.params;
   const leaguesRef = collection(database, 'highlights');
 

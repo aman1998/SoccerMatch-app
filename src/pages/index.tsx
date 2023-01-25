@@ -1,11 +1,12 @@
 import MainPage from '@containers/Main';
 import { collection, getDocs } from 'firebase/firestore';
+import { IMainPageProps } from '@containers/Main/types';
 
 import { database } from '../../firebase-config';
 
-import { TCardStaticProps } from '../config/types';
+import { TPageProps } from '../config/types';
 
-export async function getStaticProps(): TCardStaticProps {
+export async function getStaticProps(): TPageProps<IMainPageProps> {
   const highlightsCol = await collection(database, 'highlights');
   const highlightsSnapshot = await getDocs(highlightsCol);
 
