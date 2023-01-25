@@ -10,25 +10,25 @@ import classNames from "classnames";
 
 const CarouselBtns: FC<ICarouselBtnsProps> = ({ handleActiveIndex, activeIndex, count }) => (
   <div className="carousel-btns">
-    <a
+    <button
       className="carousel-arrow carousel-arrow--left"
       onClick={() => {
         handleActiveIndex(activeIndex - 1);
       }}
     >
       {<Arrow direction={EArrowDirections.left} />}
-    </a>
-    <a
+    </button>
+    <button
       className="carousel-arrow carousel-arrow--right"
       onClick={() => {
         handleActiveIndex(activeIndex + 1);
       }}
     >
       <Arrow direction={EArrowDirections.right} />
-    </a>
+    </button>
     <div className="carousel-indicators">
       {getArrayFromCount(count).map((item) => (
-        <a
+        <button
           key={item}
           className={classNames( "carousel-indicators__item", {"carousel-indicators__item--active": item === activeIndex})}
           onClick={() => {

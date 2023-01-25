@@ -27,6 +27,8 @@
     justify-content: center;
     height: 30px;
     width: 30px;
+    border: none;
+    background: inherit;
     border-radius: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -44,7 +46,6 @@
     display: flex;
     align-items: center;
     &__item {
-      display: block;
       margin-left: 5px;
       border-radius: 50%;
       width: 10px;
@@ -53,6 +54,7 @@
       opacity: 0.7;
       transition: 0.3s;
       cursor: pointer;
+      border: none;
       &:first-child {
         margin-left: 0;
       }

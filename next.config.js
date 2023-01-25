@@ -6,8 +6,8 @@ module.exports = {
         protocol: 'https',
         hostname: 'i.ytimg.com',
         port: '',
-        // pathname: '/**',
       },
     ],
+    // unoptimized: true,
   },
 };
