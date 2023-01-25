@@ -9,11 +9,15 @@ export async function getStaticProps(): TCardStaticProps {
   const highlightsCol = await collection(database, 'highlights');
   const highlightsSnapshot = await getDocs(highlightsCol);
 
+  const bestCol = await collection(database, 'bestHighlights');
+  const bestSnapshot = await getDocs(bestCol);
+
   // @ts-ignore
   const highlights = highlightsSnapshot.docs.map((doc: any) => doc.data());
+  const best = bestSnapshot.docs.map((doc: any) => doc.data());
 
   return {
-    props: { data: highlights },
+    props: { highlightsListData: highlights, bestHighlightsListData: best },
   };
 }
 

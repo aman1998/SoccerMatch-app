@@ -1,4 +1,4 @@
-import { ICardProps } from '@components/Card/types';
+import { IMainPageProps } from '@containers/Main/types';
 
 export type TNullable<T> = T | null;
 
@@ -9,5 +9,5 @@ export type TRequestHandler<T> = {
 };
 
 export type TCardStaticProps = Promise<{
-  props: { data: ICardProps[] };
+  props: IMainPageProps;
 }>;

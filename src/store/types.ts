@@ -1,7 +1,9 @@
 import { ILeaguesState } from '@store/leagues/types';
+import { IHighlightsState } from '@store/highlights/types';
 
 export interface IApplicationState {
   leagues: ILeaguesState;
+  highlights: IHighlightsState;
 }
 
 export declare type IPayloadAction<P = void, T extends string = string, M = never, E = never> = {

@@ -1,10 +1,5 @@
-export interface ICardProps {
-  title: string;
-  score: string;
-  embedUrl: string;
-  imgUrl: string;
-  league: string;
-  name: string;
-  time: string;
+import { IHighlightsData } from '@store/highlights/types';
+
+export interface ICardProps extends IHighlightsData {
   showScore?: boolean;
 }

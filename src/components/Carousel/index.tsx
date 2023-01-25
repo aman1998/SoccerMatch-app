@@ -6,6 +6,8 @@ import CarouselBtns from '@components/Carousel/components/CarouselBtns';
 const Carousel: FC<{ children: any }> = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
+  const count = Children.count(children);
+
   const handleActiveIndex = (newIndex: number): void => {
     const childrenLength = Children.count(children);
     if (newIndex === activeIndex) return;
@@ -28,11 +30,13 @@ const Carousel: FC<{ children: any }> = ({ children }) => {
       <div className="carousel__inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {Children.map(children, (child) => cloneElement(child, { width: '100%' }))}
       </div>
-      <CarouselBtns
-        handleActiveIndex={handleActiveIndex}
-        activeIndex={activeIndex}
-        count={Children.count(children)}
-      />
+      {
+        count > 1 && <CarouselBtns
+          handleActiveIndex={handleActiveIndex}
+          activeIndex={activeIndex}
+          count={count}
+        />
+      }
     </div>
   );
 };

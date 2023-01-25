@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import highlight from './highlight/reducers';
+import highlights from './highlights/reducers';
 import leagues from './leagues/reducers';
 
 const rootReducer = combineReducers({
-  highlight,
+  highlights,
   leagues,
 });
 
