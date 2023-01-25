@@ -6,15 +6,19 @@ import Layout from '@components/Layout';
 import CardList from '@components/CardList';
 import { sitename } from '@components/Layout/consts';
 
-import { useAppDispatch } from '@hooks/useRedux';
+import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
 
-import { getBestList } from '@store/highlights/reducers';
+import { getBestHighlightsList } from '@store/highlights/reducers';
+import { bestHighlightsListSelector } from '@store/highlights/selectors';
 
 const Main: NextPage<IMainPageProps> = ({ highlightsListData, bestHighlightsListData }) => {
   const dispatch = useAppDispatch();
+  const list = useAppSelector(bestHighlightsListSelector);
 
   useEffect(() => {
-    dispatch(getBestList(bestHighlightsListData));
+    if (!list.length) {
+      dispatch(getBestHighlightsList(bestHighlightsListData));
+    }
   }, []);
 
   return (

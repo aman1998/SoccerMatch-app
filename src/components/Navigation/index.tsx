@@ -28,7 +28,7 @@ const Navigation: FC = () => {
         {!loading && leaguesList?.length && (
           <>
             <li className={`navigation__item ${asPath === `/` && 'navigation__item--active'}`}>
-              <Link className="navigation__link" href={`/`}>
+              <Link className="navigation__link" href={`/`} prefetch={false}>
                 Все
               </Link>
             </li>
@@ -39,7 +39,7 @@ const Navigation: FC = () => {
                   asPath === `/leagues/${item.link}` && 'navigation__item--active'
                 }`}
               >
-                <Link className="navigation__link" href={`/leagues/${item.link}`}>
+                <Link className="navigation__link" href={`/leagues/${item.link}`} prefetch={false}>
                   {getCountryTranslate(item.name)}
                 </Link>
               </li>

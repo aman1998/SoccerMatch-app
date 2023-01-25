@@ -32,16 +32,20 @@ export async function getStaticProps(context: {
   params: { id: string };
 }): TPageProps<ILeaguePageProps> {
   const { id } = context.params;
-  const leaguesRef = collection(database, 'highlights');
+  const leaguesRef = await collection(database, 'highlights');
 
   const q = query(leaguesRef, where('league', '==', id));
   const leagueSnapshot = await getDocs(q);
 
+  const bestCol = await collection(database, 'bestHighlights');
+  const bestSnapshot = await getDocs(bestCol);
+
   // @ts-ignore
   const highlights = leagueSnapshot.docs.map((doc: any) => doc.data());
+  const best = bestSnapshot.docs.map((doc: any) => doc.data());
 
   return {
-    props: { data: highlights },
+    props: { data: highlights, bestHighlightsList: best },
   };
 }
 

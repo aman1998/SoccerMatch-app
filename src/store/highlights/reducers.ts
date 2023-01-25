@@ -9,12 +9,15 @@ export const counterSlice = createSlice({
     bestHighlightsList: [],
   },
   reducers: {
-    getBestList: (state: IHighlightsState, action: IPayloadAction<IBestHighlightsData[]>) => {
+    getBestHighlightsList: (
+      state: IHighlightsState,
+      action: IPayloadAction<IBestHighlightsData[]>
+    ) => {
       state.bestHighlightsList = action.payload;
     },
   },
 });
 
-export const { getBestList } = counterSlice.actions;
+export const { getBestHighlightsList } = counterSlice.actions;
 
 export default counterSlice.reducer;
