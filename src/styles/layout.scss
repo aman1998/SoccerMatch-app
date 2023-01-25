@@ -4,12 +4,12 @@
 
 html {
   font-size: $fs-rem-xl;
-  @media screen and (max-width: $max-lg-media) {
-    font-size: $fs-rem-lg;
-  }
-  @media screen and (max-width: $max-md-media) {
-    font-size: $fs-rem-md;
-  }
+  //@media screen and (max-width: $max-lg-media) {
+  //  font-size: $fs-rem-lg;
+  //}
+  //@media screen and (max-width: $max-md-media) {
+  //  font-size: $fs-rem-md;
+  //}
   //@media screen and (max-width: $max-sm-media) {
   //  font-size: $fs-rem-sm;
   //}

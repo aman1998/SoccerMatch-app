@@ -3,6 +3,7 @@
   justify-content: space-between;
   margin-top: 2rem;
   @media screen and (max-width: $max-md-media) {
+    margin-top: 1rem;
     flex-direction: column;
   }
   @media screen and (max-width: $max-sm-media) {
@@ -54,6 +55,11 @@
     font-size: 3.3rem;
     @media screen and (max-width: $max-md-media) {
       margin-top: 0;
+      font-size: 3rem;
+    }
+    @media screen and (max-width: $max-sm-media) {
+      margin-top: 0;
+      font-size: 2.5rem;
     }
   }
   &__text {
@@ -61,6 +67,9 @@
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 140%;
+    @media screen and (max-width: $max-md-media) {
+      font-size: 1rem;
+    }
   }
   &__navigation {
     margin-top: auto;
