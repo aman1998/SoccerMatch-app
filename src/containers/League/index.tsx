@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { ILeaguePageProps } from '@containers/League/types';
 
-import Layout from '@components/Layout';
 import CardList from '@components/CardList';
+import Header from '@components/Header';
+import Seo from '@components/Ceo';
 
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
 
@@ -28,9 +29,13 @@ const League: NextPage<ILeaguePageProps> = ({ data, bestHighlightsList }) => {
   const title = getCountryTranslate(String(router.query.id));
 
   return (
-    <Layout title={`${title} - футбольные обзоры`}>
-      <CardList list={data} />
-    </Layout>
+    <>
+      <Seo seoTitle={title} />
+      <div className="container">
+        <Header />
+        <CardList list={data} />
+      </div>
+    </>
   );
 };
 

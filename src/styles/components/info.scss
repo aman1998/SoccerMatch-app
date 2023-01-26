@@ -50,7 +50,7 @@
     flex-direction: column;
   }
   &__title {
-    margin-top: 2rem;
+    //margin-top: 2rem;
     font-weight: 600;
     font-size: 3.3rem;
     @media screen and (max-width: $max-md-media) {
@@ -63,7 +63,7 @@
     }
   }
   &__text {
-    margin-top: 16px;
+    margin: 16px 0;
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 140%;
@@ -72,6 +72,6 @@
     }
   }
   &__navigation {
-    margin-top: auto;
+    //margin-top: auto;
   }
 }

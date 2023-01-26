@@ -1,0 +1,27 @@
+.card-league {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  color: $font;
+  &:hover {
+    transform: scale(1.1);
+    .card-league__text {
+      display: block;
+    }
+  }
+  &__image {
+    opacity: 0.5;
+  }
+  &__text {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
+
+import CardLeague from '@components/CardLeague';
 
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
 
@@ -13,7 +13,6 @@ import { getCountryTranslate } from '@utils/language';
 
 const Navigation: FC = () => {
   const router = useRouter();
-  const { asPath } = router;
   const dispatch = useAppDispatch();
 
   const leaguesList = useAppSelector(leaguesListDataSelector);
@@ -28,25 +27,11 @@ const Navigation: FC = () => {
       <ul>
         {!loading && leaguesList?.length && (
           <>
-            <li
-              className={classNames('navigation__item', {
-                'navigation__item--active': asPath === `/`,
-              })}
-            >
-              <Link className="navigation__link" href={`/`} prefetch={false}>
-                Все
-              </Link>
-            </li>
             {leaguesList.map((item: ILeaguesData) => (
-              <li
-                key={item.name}
-                className={classNames('navigation__item', {
-                  'navigation__item--active': asPath === `/leagues/${item.link}`,
-                })}
-              >
-                <Link className="navigation__link" href={`/leagues/${item.link}`} prefetch={false}>
-                  {getCountryTranslate(item.name)}
-                </Link>
+              <li key={item.name}>
+                <div onClick={() => router.push(`/leagues/${item.link}`)}>
+                  <CardLeague imgUrl={item.imgUrl} name={getCountryTranslate(item.name)} />
+                </div>
               </li>
             ))}
           </>
