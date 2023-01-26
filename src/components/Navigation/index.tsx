@@ -28,11 +28,23 @@ const Navigation: FC = () => {
         {!loading && leaguesList?.length && (
           <>
             {leaguesList.map((item: ILeaguesData) => (
-              <li key={item.name}>
-                <div onClick={() => router.push(`/leagues/${item.link}`)}>
-                  <CardLeague imgUrl={item.imgUrl} name={getCountryTranslate(item.name)} />
-                </div>
-              </li>
+              <>
+                <li key={item.name}>
+                  <div onClick={() => router.push(`/leagues/${item.link}`)}>
+                    <CardLeague imgUrl={item.imgUrl} name={getCountryTranslate(item.name)} />
+                  </div>
+                </li>
+                <li key={item.name}>
+                  <div onClick={() => router.push(`/leagues/${item.link}`)}>
+                    <CardLeague imgUrl={item.imgUrl} name={getCountryTranslate(item.name)} />
+                  </div>
+                </li>
+                <li key={item.name}>
+                  <div onClick={() => router.push(`/leagues/${item.link}`)}>
+                    <CardLeague imgUrl={item.imgUrl} name={getCountryTranslate(item.name)} />
+                  </div>
+                </li>
+              </>
             ))}
           </>
         )}

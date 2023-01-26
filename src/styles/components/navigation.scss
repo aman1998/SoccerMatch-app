@@ -1,9 +1,15 @@
 .navigation {
+  max-width: 850px;
   @media screen and (max-width: $max-md-media) {
     //display: none;
   }
   ul {
     display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    li {
+      display: inline-block;
+    }
   }
   &__item {
     display: flex;
