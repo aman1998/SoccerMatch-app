@@ -2,11 +2,11 @@ import LeaguePage from '@containers/League';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { ILeaguePageProps } from '@containers/League/types';
 
+import { TPageProps } from '@config/types';
+
 import { ILeaguesData } from '@store/leagues/types';
 
 import { database } from '../../../firebase-config';
-
-import { TPageProps } from '../../config/types';
 
 export async function getStaticPaths(): Promise<{
   paths: { params: { id: string } }[];

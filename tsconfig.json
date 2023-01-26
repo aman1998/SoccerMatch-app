@@ -33,6 +33,9 @@
       "@containers/*": [
         "./src/containers/*"
       ],
+      "@config/*": [
+        "./src/config/*"
+      ],
       "@common/*": [
         "./src/common/*"
       ],

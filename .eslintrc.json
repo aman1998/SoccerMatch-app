@@ -110,17 +110,22 @@
                         "position": "after"
                     },
                     {
+                        "pattern": "@components/**",
+                        "group": "internal",
+                        "position": "after"
+                    },
+                    {
                         "pattern": "@common/**",
                         "group": "internal",
                         "position": "after"
                     },
                     {
-                        "pattern": "@const/**",
+                        "pattern": "@config/**",
                         "group": "internal",
                         "position": "after"
                     },
                     {
-                        "pattern": "@components/**",
+                        "pattern": "@const/**",
                         "group": "internal",
                         "position": "after"
                     },

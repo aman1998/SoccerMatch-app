@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import classNames from 'classnames';
 
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
 
@@ -27,7 +28,11 @@ const Navigation: FC = () => {
       <ul>
         {!loading && leaguesList?.length && (
           <>
-            <li className={`navigation__item ${asPath === `/` && 'navigation__item--active'}`}>
+            <li
+              className={classNames('navigation__item', {
+                'navigation__item--active': asPath === `/`,
+              })}
+            >
               <Link className="navigation__link" href={`/`} prefetch={false}>
                 Все
               </Link>
@@ -35,9 +40,9 @@ const Navigation: FC = () => {
             {leaguesList.map((item: ILeaguesData) => (
               <li
                 key={item.name}
-                className={`navigation__item ${
-                  asPath === `/leagues/${item.link}` && 'navigation__item--active'
-                }`}
+                className={classNames('navigation__item', {
+                  'navigation__item--active': asPath === `/leagues/${item.link}`,
+                })}
               >
                 <Link className="navigation__link" href={`/leagues/${item.link}`} prefetch={false}>
                   {getCountryTranslate(item.name)}
