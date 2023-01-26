@@ -36,7 +36,7 @@ html {
 
 .container {
   width: 100%;
-  max-width: 1230px;
+  max-width: $max-container-media;
   margin: 0 auto;
   padding: 0 16px;
 }
