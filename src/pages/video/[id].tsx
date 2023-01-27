@@ -5,4 +5,4 @@ const VideoPage: ComponentType = dynamic(() => import('@containers/Video'), {
   ssr: false,
 });
 
-export default <VideoPage />;
+export default (): any => <VideoPage />;
