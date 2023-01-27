@@ -30,7 +30,7 @@ const League: NextPage<ILeaguePageProps> = ({ data, bestHighlightsList }) => {
 
   return (
     <>
-      <Seo seoTitle={title} />
+      <Seo seoTitle={`${title} - футбольные обзоры`} />
       <div className="container">
         <Header />
         <CardList list={data} />
