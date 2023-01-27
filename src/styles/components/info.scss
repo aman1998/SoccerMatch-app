@@ -11,14 +11,21 @@
   }
   &-imac {
     position: relative;
-    @media screen and (max-width: $max-md-media) {
-      margin-top: 12px;
-    }
     &__title {
       position: absolute;
       top: 10px;
       left: 10px;
       opacity: 1;
+      outline: none;
+      cursor: pointer;
+      color: $font;
+      text-decoration: none;
+      @media screen and ('min-width': $x-media) {
+        &:hover {
+          color: $green;
+          text-decoration: underline;
+        }
+      }
     }
     &__image {
       height: 100%;
@@ -40,8 +47,10 @@
       text-decoration: none;
       color: $font;
       transition: 0.3s;
-      &:hover {
-        background: $green;
+      @media screen and ('min-width': $x-media) {
+        &:hover {
+          background: $green;
+        }
       }
     }
   }
@@ -63,11 +72,12 @@
     }
   }
   &__text {
-    margin: 16px 0;
+    margin: 16px 0 0 0;
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 140%;
     @media screen and (max-width: $max-md-media) {
+      margin: 8px 0;
       font-size: 1rem;
     }
   }

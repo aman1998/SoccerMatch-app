@@ -16,15 +16,8 @@ const Info: FC = () => {
 
   const bestHighlights = useAppSelector(bestHighlightsListSelector);
 
-  const getTitle = () => {
-    if (!bestHighlights.length) return;
-    return bestHighlights[activeIndex].title;
-  };
-
-  const getUrl = () => {
-    if (!bestHighlights.length) return;
-    return bestHighlights[activeIndex].embedUrl;
-  };
+  const getTitle = () => !!bestHighlights.length && bestHighlights[activeIndex].title;
+  const getUrl = () => !!bestHighlights.length && bestHighlights[activeIndex].embedUrl;
 
   return (
     <section className="info">
@@ -47,10 +40,14 @@ const Info: FC = () => {
               </CarouselItem>
             ))}
           </Carousel>
-          <div className="info-imac__title">{getTitle()}</div>
-          <Link href={`/video/${getUrl()}`} className="info-imac__play">
-            Play
+          <Link href={`/video/${getUrl()}`} className="info-imac__title">
+            {getTitle()}
           </Link>
+          {!!bestHighlights.length && (
+            <Link href={`/video/${getUrl()}`} className="info-imac__play">
+              Play
+            </Link>
+          )}
         </IMac>
       </div>
     </section>

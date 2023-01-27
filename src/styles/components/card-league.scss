@@ -8,10 +8,12 @@
   overflow: hidden;
   transition: all 0.3s ease-out;
   color: $font;
-  &:hover {
-    transform: scale(1.1);
-    .card-league__text {
-      display: block;
+  @media screen and ('min-width': $x-media) {
+    &:hover {
+      transform: scale(1.1);
+      .card-league__text {
+        display: block;
+      }
     }
   }
   &__image {

@@ -5,18 +5,22 @@ import Card from '@components/Card';
 
 const CardList: FC<{ list: ICardProps[] }> = ({ list }) => (
   <section className="card-list">
-    {list.map((item: ICardProps, index: number) => (
-      <Card
-        key={index}
-        embedUrl={item.embedUrl}
-        title={item.title}
-        score={item.score}
-        imgUrl={item.imgUrl}
-        league={item.league}
-        name={item.name}
-        time={item.time}
-      />
-    ))}
+    {!!list.length ? (
+      list.map((item: ICardProps, index: number) => (
+        <Card
+          key={index}
+          embedUrl={item.embedUrl}
+          title={item.title}
+          score={item.score}
+          imgUrl={item.imgUrl}
+          league={item.league}
+          name={item.name}
+          time={item.time}
+        />
+      ))
+    ) : (
+      <p>Пусто</p>
+    )}
   </section>
 );
 

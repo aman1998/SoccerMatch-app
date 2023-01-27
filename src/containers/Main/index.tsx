@@ -10,12 +10,22 @@ import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
 
 import { getBestHighlightsList } from '@store/highlights/reducers';
 import { bestHighlightsListSelector } from '@store/highlights/selectors';
+import { getLeaguesData } from '@store/leagues/reducers';
+import { leaguesListDataSelector } from '@store/leagues/selectors';
 
-const Main: NextPage<IMainPageProps> = ({ highlightsListData, bestHighlightsListData }) => {
+const Main: NextPage<IMainPageProps> = ({
+  highlightsListData,
+  bestHighlightsListData,
+  leaguesData,
+}) => {
   const dispatch = useAppDispatch();
   const list = useAppSelector(bestHighlightsListSelector);
+  const leagues = useAppSelector(leaguesListDataSelector);
 
   useEffect(() => {
+    if (!leagues?.length) {
+      dispatch(getLeaguesData(leaguesData));
+    }
     if (!list.length) {
       dispatch(getBestHighlightsList(bestHighlightsListData));
     }

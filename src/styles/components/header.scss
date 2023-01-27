@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 30px 0;
+  @media screen and (max-width: $max-sm-media) {
+    padding: 20px 0;
+  }
   &__logo {
     display: block;
     width: max-content;
