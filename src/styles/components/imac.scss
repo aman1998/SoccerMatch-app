@@ -1,6 +1,6 @@
 .imac {
   width: 430px;
-  @media screen and (max-width: $max-xs-media) {
+  @media screen and (max-width: $max-more-xs-media) {
     width: 100%;
   }
   &__header-frame {
@@ -9,6 +9,9 @@
     width: 100%;
     background: $black2;
     border-radius: 10px 10px 0 0;
+    @media screen and (max-width: $max-more-xs-media) {
+      height: auto;
+    }
   }
   &__display {
     position: relative;

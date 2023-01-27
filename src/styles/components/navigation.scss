@@ -1,5 +1,9 @@
 .navigation {
   max-width: 890px;
+  @media screen and ('max-width': $max-md-media) {
+    margin-bottom: 16px;
+    height: 120px;
+  }
   ul {
     display: flex;
     align-items: center;

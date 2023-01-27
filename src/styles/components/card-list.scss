@@ -8,4 +8,7 @@
   @media screen and (max-width: $max-lg-media) {
     margin-top: 12px;
   }
+  @media screen and (max-width: $max-xs-media) {
+    grid-template-columns: 1fr;
+  }
 }
