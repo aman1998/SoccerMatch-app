@@ -1,0 +1,4 @@
+Sitemap: https://highlights-61135.web.app
+
+User-agent: *
+Allow: /*
