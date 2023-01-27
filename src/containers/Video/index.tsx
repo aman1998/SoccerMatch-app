@@ -1,13 +1,19 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import Youtube from '@components/Youtube';
 import Layout from '@components/Layout';
 
 const Video: NextPage = () => {
-  const { query } = useRouter();
+  const router = useRouter();
 
-  const id = query.id as string;
+  useEffect(() => {
+    if (router.asPath !== router.route) {
+    }
+  }, [router]);
+
+  const id = router.query.id as string;
 
   return (
     <Layout title="Обзор матча" showInfo={false}>
