@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import { ILeaguePageProps } from '@containers/League/types';
 
 import CardList from '@components/CardList';
-import Header from '@components/Header';
-import Seo from '@components/Ceo';
 import Layout from '@components/Layout';
 
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
