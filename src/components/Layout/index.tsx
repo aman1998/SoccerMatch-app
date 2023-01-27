@@ -12,6 +12,7 @@ const Layout: FC<ILayoutProps> = ({ children, title, showInfo = true }) => (
       <Header />
       {showInfo && <Info />}
       <main>{children}</main>
+      <footer style={{ marginTop: '8px' }} />
     </div>
   </>
 );
