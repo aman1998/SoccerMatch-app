@@ -1,34 +1,40 @@
+import SpainImg from 'public/spain.jpg';
+import EnglandImg from 'public/england.jpeg';
+import FranceImg from 'public/france.jpg';
+import ItalyImg from 'public/italy.jpg';
+import GermanyImg from 'public/germany.jpg';
+
 import { ILink } from './types';
 
 export const links: ILink[] = [
   {
     id: 1,
-    name: 'Все',
-    link: '/',
+    name: 'England',
+    link: 'england',
+    img: EnglandImg,
   },
   {
     id: 2,
-    name: 'Англия',
-    link: '/epl',
+    name: 'Spain',
+    link: 'spain',
+    img: SpainImg,
   },
   {
     id: 3,
-    name: 'Испания',
-    link: '/la-liga',
+    name: 'Italy',
+    link: 'italy',
+    img: ItalyImg,
   },
   {
     id: 4,
-    name: 'Итария',
-    link: '/seria-a',
+    name: 'Germany',
+    link: 'germany',
+    img: GermanyImg,
   },
   {
     id: 5,
-    name: 'Германия',
-    link: '/bundesliga',
-  },
-  {
-    id: 6,
-    name: 'Франция',
-    link: '/league-1',
+    name: 'France',
+    link: 'france',
+    img: FranceImg,
   },
 ];

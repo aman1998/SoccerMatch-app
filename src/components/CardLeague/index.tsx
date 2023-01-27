@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 import { ICardLeagueProps } from '@components/CardLeague/types';
 
-const CardLeague: FC<ICardLeagueProps> = ({ imgUrl, name }) => (
+const CardLeague: FC<ICardLeagueProps> = ({ img, name }) => (
   <div className="card-league">
     <Image
-      src={imgUrl}
+      src={img}
       alt={'card-league'}
       fill
       quality={100}

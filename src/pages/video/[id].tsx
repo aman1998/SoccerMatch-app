@@ -1,8 +1,3 @@
-import dynamic from 'next/dynamic';
-import { ComponentType } from 'react';
+import VideoPage from '@containers/Video';
 
-const VideoPage: ComponentType = dynamic(() => import('@containers/Video'), {
-  ssr: false,
-});
-
-export default (): any => <VideoPage />;
+export default VideoPage;

@@ -13,16 +13,12 @@ export async function getStaticProps(): TPageProps<IMainPageProps> {
   const bestCol = await collection(database, 'bestHighlights');
   const bestSnapshot = await getDocs(bestCol);
 
-  const leaguesCol = await collection(database, 'leagues');
-  const leaguesSnapshot = await getDocs(leaguesCol);
-
   // @ts-ignore
   const highlights = highlightsSnapshot.docs.map((doc: any) => doc.data());
   const best = bestSnapshot.docs.map((doc: any) => doc.data());
-  const leagues = leaguesSnapshot.docs.map((doc: any) => doc.data());
 
   return {
-    props: { highlightsListData: highlights, bestHighlightsListData: best, leaguesData: leagues },
+    props: { highlightsListData: highlights, bestHighlightsListData: best },
   };
 }
 
