@@ -6,6 +6,7 @@ import { ILeaguePageProps } from '@containers/League/types';
 import CardList from '@components/CardList';
 import Header from '@components/Header';
 import Seo from '@components/Ceo';
+import Layout from '@components/Layout';
 
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux';
 
@@ -29,13 +30,9 @@ const League: NextPage<ILeaguePageProps> = ({ data, bestHighlightsList }) => {
   const title = getCountryTranslate(String(router.query.id));
 
   return (
-    <>
-      <Seo seoTitle={`${title} - футбольные обзоры`} />
-      <div className="container">
-        <Header />
-        <CardList list={data} />
-      </div>
-    </>
+    <Layout title={`${title} - футбольные обзоры`} showInfo={false}>
+      <CardList list={data} />
+    </Layout>
   );
 };
 
