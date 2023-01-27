@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import Navigation from '@components/Navigation';
 import IMac from '@components/IMac';
@@ -15,6 +15,8 @@ const Info: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const bestHighlights = useAppSelector(bestHighlightsListSelector);
+
+  const router = useRouter();
 
   const getTitle = () => !!bestHighlights.length && bestHighlights[activeIndex].title;
   const getUrl = () => !!bestHighlights.length && bestHighlights[activeIndex].embedUrl;
@@ -40,13 +42,13 @@ const Info: FC = () => {
               </CarouselItem>
             ))}
           </Carousel>
-          <Link href={`/video/${getUrl()}`} className="info-imac__title">
+          <div onClick={() => router.push(`/video/${getUrl()}`)} className="info-imac__title">
             {getTitle()}
-          </Link>
+          </div>
           {!!bestHighlights.length && (
-            <Link href={`/video/${getUrl()}`} className="info-imac__play">
+            <div onClick={() => router.push(`/video/${getUrl()}`)} className="info-imac__play">
               Play
-            </Link>
+            </div>
           )}
         </IMac>
       </div>

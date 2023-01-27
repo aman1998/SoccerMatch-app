@@ -9,4 +9,5 @@ coverage
 .jest
 .env
 .env.local
+.firebase
 out
