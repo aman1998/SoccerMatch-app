@@ -1,3 +1,7 @@
-import VideoPage from '@containers/Video';
+import dynamic from 'next/dynamic';
 
-export default VideoPage;
+const VideoPage = dynamic(() => import('@containers/Video'), {
+  ssr: false,
+});
+
+export default (): any => <VideoPage />;
