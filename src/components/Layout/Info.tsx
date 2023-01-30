@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import Navigation from '@components/Navigation';
 import IMac from '@components/IMac';
@@ -38,7 +39,14 @@ const Info: FC = () => {
           <Carousel activeIndex={activeIndex} setActiveIndex={setActiveIndex}>
             {bestHighlights.map((item: IBestHighlightsData, index) => (
               <CarouselItem key={index}>
-                <img src={item.imgUrl} alt="game-cover" className="info-imac__image" />
+                <Image
+                  src={item.imgUrl}
+                  alt="game-cover"
+                  className="info-imac__image"
+                  fill
+                  quality={50}
+                  style={{ objectFit: 'cover' }}
+                />
               </CarouselItem>
             ))}
           </Carousel>

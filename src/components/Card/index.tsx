@@ -19,7 +19,7 @@ const Card: FC<ICardProps> = ({ score, embedUrl, title, imgUrl, time, name, show
       <Image
         src={imgUrl}
         fill
-        quality={100}
+        quality={50}
         alt="game-cover"
         className="card__image"
         sizes="(max-width: 100%, width: 100%)"

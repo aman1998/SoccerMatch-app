@@ -7,7 +7,7 @@
   right: 0;
   top: 0;
   transform: translateX(200%);
-  z-index: 2;
+  z-index: $i-Burger;
   transition: 0.3s;
   &--active {
     //transform: translateX(70%);

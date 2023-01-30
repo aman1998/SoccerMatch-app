@@ -8,6 +8,7 @@
   overflow: hidden;
   transition: all 0.3s ease-out;
   color: $font;
+  opacity: 0.5;
   @media screen and ('min-width': $x-media) {
     &:hover {
       transform: scale(1.1);
@@ -16,14 +17,12 @@
       }
     }
   }
-  &__image {
-    opacity: 0.5;
-  }
   &__text {
     display: none;
     position: absolute;
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
+    color: $font;
   }
 }

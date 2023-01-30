@@ -36,9 +36,13 @@ $min-xl-media: 1399.99px;
 
 $max-container-media: 1359.99px;
 
-
+// *** Font-sizes *** //
 $fs-rem-xl: 16px;
 $fs-rem-lg: 14px;
 $fs-rem-md: 12px;
 $fs-rem-sm: 10px;
 $fs-rem-xs: 8px;
+
+// *** Z-index *** //
+$i-Burger: 100;
+$i-Menu: 99;

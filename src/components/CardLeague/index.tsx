@@ -1,20 +1,21 @@
 import { FC } from 'react';
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import { ICardLeagueProps } from '@components/CardLeague/types';
 
-const CardLeague: FC<ICardLeagueProps> = ({ img, name }) => (
-  <div className="card-league">
-    <Image
-      src={img}
-      alt={'card-league'}
-      fill
-      quality={100}
-      className="card-league__image"
-      sizes="(max-width: 100%, width: 100%)"
-    />
-    <p className="card-league__text">{name}</p>
-  </div>
-);
+const CardLeague: FC<ICardLeagueProps> = ({ img, link }) => {
+  const router = useRouter();
+
+  const styling = {
+    backgroundImage: `url('${img.src}')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+
+  return (
+    <div className="card-league" style={styling} onClick={() => router.push(`/leagues/${link}`)} />
+  );
+};
 
 export default CardLeague;
