@@ -1,5 +1,9 @@
 .navigation {
+  margin: 0 8px 0 -15px;
+  padding-left: 15px;
   max-width: 890px;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   @media screen and ('max-width': $max-md-media) {
     margin-bottom: 16px;
     height: 120px;
@@ -8,9 +12,6 @@
     display: flex;
     align-items: center;
     height: 160px;
-    margin-right: 8px;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
     @media screen and ('max-width': $max-md-media) {
       margin-right: 0;
       height: auto;

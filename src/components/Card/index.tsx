@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import BlurImg from 'public/blur.png';
 
 import { ICardProps } from '@components/Card/types';
 
@@ -22,7 +23,9 @@ const Card: FC<ICardProps> = ({ score, embedUrl, title, imgUrl, time, name, show
         quality={50}
         alt="game-cover"
         className="card__image"
-        sizes="(max-width: 100%, width: 100%)"
+        sizes="(max-width: 410px)"
+        placeholder="blur"
+        blurDataURL={BlurImg.blurDataURL}
       />
       <div className="card__corner">
         <div className="card__arrow">→</div>

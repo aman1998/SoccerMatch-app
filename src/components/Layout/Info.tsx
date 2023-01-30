@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import BlurImg from 'public/blur.png';
 
 import Navigation from '@components/Navigation';
 import IMac from '@components/IMac';
@@ -46,6 +47,9 @@ const Info: FC = () => {
                   fill
                   quality={50}
                   style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 410px)"
+                  placeholder="blur"
+                  blurDataURL={BlurImg.blurDataURL}
                 />
               </CarouselItem>
             ))}
