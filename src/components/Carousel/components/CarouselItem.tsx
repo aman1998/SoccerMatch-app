@@ -1,7 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { CSSProperties, FC, ReactNode } from 'react';
 
-const CarouselItem: FC<{ children: ReactNode }> = ({ children }) => (
-  <div className="carousel-item">{children}</div>
+const CarouselItem: FC<{ children: ReactNode; style?: CSSProperties }> = ({ children, style }) => (
+  <div className="carousel-item" style={style}>
+    {children}
+  </div>
 );
 
 export default CarouselItem;

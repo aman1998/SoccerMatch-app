@@ -7,5 +7,5 @@ const selectState = (state: IApplicationState) => state.highlights;
 
 export const bestHighlightsListSelector = createSelector(
   selectState,
-  (highlights: IHighlightsState) => highlights.bestHighlightsList
+  (highlights: IHighlightsState) => highlights.bestHighlightsList.data
 );

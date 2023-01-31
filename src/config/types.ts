@@ -2,7 +2,7 @@ export type TNullable<T> = T | null;
 
 export type TRequestHandler<T> = {
   fetching: boolean;
-  data: TNullable<T>;
+  data: T[];
   error: unknown;
 };
 

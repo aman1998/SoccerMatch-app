@@ -7,5 +7,5 @@ export interface ILeaguesData {
 }
 
 export interface ILeaguesState {
-  list: TRequestHandler<ILeaguesData[]>;
+  list: TRequestHandler<ILeaguesData>;
 }

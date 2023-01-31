@@ -1,3 +1,5 @@
+import { TRequestHandler } from '@config/types';
+
 export interface IBestHighlightsData {
   embedUrl: string;
   imgUrl: string;
@@ -15,5 +17,5 @@ export interface IHighlightsData {
 }
 
 export interface IHighlightsState {
-  bestHighlightsList: IBestHighlightsData[];
+  bestHighlightsList: TRequestHandler<IBestHighlightsData>;
 }

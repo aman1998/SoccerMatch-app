@@ -1,9 +1,10 @@
 .carousel {
-  position: relative;
   overflow: hidden;
   height: 100%;
   width: 100%;
   &__inner {
+    height: 100%;
+    width: 100%;
     white-space: nowrap;
     transition: transform 0.3s;
   }
@@ -11,7 +12,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: auto;
+    height: 100%;
     width: 100%;
   }
   &-btns {

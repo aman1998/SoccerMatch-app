@@ -15,7 +15,7 @@ function* getLeaguesList() {
     const leagues = leaguesSnapshot.docs.map((doc: any) => doc.data());
     yield put(getLeaguesData(leagues));
   } catch (error) {
-    yield put(getLeaguesError(getLeaguesError));
+    yield put(getLeaguesError('error'));
   }
 }
 
