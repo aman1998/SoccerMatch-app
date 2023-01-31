@@ -4,24 +4,16 @@ import { ILeaguePageProps } from '@containers/League/types';
 
 import { TPageProps } from '@config/types';
 
-import { ILeaguesData } from '@store/leagues/types';
-
 import { database } from '../../../firebase-config';
 
 export async function getStaticPaths(): Promise<{
   paths: { params: { id: string } }[];
   fallback: boolean;
 }> {
-  const leaguesCol = await collection(database, 'leagues');
-  const leaguesSnapshot = await getDocs(leaguesCol);
-
-  // @ts-ignore
-  const leagues = leaguesSnapshot.docs.map((doc: any) => doc.data());
-
   return {
-    paths: leagues.map((item: ILeaguesData) => ({
+    paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
       params: {
-        id: item.link,
+        id: item,
       },
     })),
     fallback: false,
