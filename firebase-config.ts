@@ -2,14 +2,9 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  authDomain: 'highlights-61135.firebaseapp.com',
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
   projectId: 'highlights-61135',
   storageBucket: 'highlights-61135.appspot.com',
   messagingSenderId: '179118235142',
@@ -17,5 +12,4 @@ const firebaseConfig = {
   measurementId: 'G-Z3B7K65K3B',
 };
 
-const app = initializeApp(firebaseConfig);
-export const database = getFirestore(app);
+export const database = getFirestore(initializeApp(firebaseConfig));
