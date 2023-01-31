@@ -10,13 +10,12 @@
   z-index: $i-menu;
   transition: 0.3s;
   &--active {
-    //transform: translateX(70%);
     transform: translateX(0);
   }
   &__content {
     width: 30%;
     height: 100%;
-    background-color: black;
+    background-color: $black2;
     transition: 0.3s;
     @media screen and (max-width: $max-sm-media) {
       width: 100%;
