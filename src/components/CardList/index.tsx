@@ -13,7 +13,7 @@ const CardList: FC<{ list: ICardProps[] }> = ({ list }) => (
           title={item.title}
           score={item.score}
           imgUrl={item.imgUrl}
-          league={item.league}
+          type={item.type}
           name={item.name}
           time={item.time}
         />

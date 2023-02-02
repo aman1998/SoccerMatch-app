@@ -11,7 +11,7 @@ export interface IHighlightsData {
   score: string;
   embedUrl: string;
   imgUrl: string;
-  league: string;
+  type: string;
   name: string;
   time: string;
 }

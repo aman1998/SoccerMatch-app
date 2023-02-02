@@ -5,11 +5,20 @@ import BlurImg from 'public/blur.png';
 
 import { ICardProps } from '@components/Card/types';
 
-const Card: FC<ICardProps> = ({ score, embedUrl, title, imgUrl, time, name, showScore = true }) => (
+const Card: FC<ICardProps> = ({
+  score,
+  embedUrl,
+  title,
+  imgUrl,
+  time,
+  name,
+  type,
+  showScore = true,
+}) => (
   <Link href={`/video/${embedUrl}`} className="card-link">
     <div className="card">
       <div className="card__header">
-        <div className="card__league">{name}</div>
+        <div className="card__league">{`${name} ${type}`}</div>
         <div className="card__time">{time}</div>
       </div>
       <div className="card__footer">

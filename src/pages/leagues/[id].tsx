@@ -1,33 +1,29 @@
+/* eslint-disable */
 import LeaguePage from '@containers/League';
 import { collection, getDocs, where, query } from 'firebase/firestore';
-import { ILeaguePageProps } from '@containers/League/types';
-
-import { TPageProps } from '@config/types';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { database } from '../../../firebase-config';
 
-export async function getStaticPaths(): Promise<{
-  paths: { params: { id: string } }[];
-  fallback: boolean;
-}> {
-  return {
-    paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
-      params: {
-        id: item,
-      },
-    })),
-    fallback: false,
-  };
+interface IParams {
+  id?: string;
 }
 
-export async function getStaticProps(context: {
-  params: { id: string };
-}): TPageProps<ILeaguePageProps> {
-  const { id } = context.params;
+export const getStaticPaths: GetStaticPaths = () => ({
+  paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
+    params: {
+      id: item,
+    },
+  })),
+  fallback: false,
+});
+
+export const getStaticProps: GetStaticProps = async context => {
+  const { id } = context.params as IParams;
 
   const leaguesRef = await collection(database, 'highlights');
 
-  const q = query(leaguesRef, where('league', '==', id));
+  const q = query(leaguesRef, where('name', '==', id));
   const leagueSnapshot = await getDocs(q);
 
   // @ts-ignore
@@ -35,7 +31,8 @@ export async function getStaticProps(context: {
 
   return {
     props: { data: highlights },
+    revalidate: 5
   };
-}
+};
 
 export default LeaguePage;

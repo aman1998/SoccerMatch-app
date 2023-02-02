@@ -1,12 +1,10 @@
 import MainPage from '@containers/Main';
 import { collection, getDocs } from 'firebase/firestore';
-import { IMainPageProps } from '@containers/Main/types';
-
-import { TPageProps } from '@config/types';
+import { GetStaticProps } from 'next';
 
 import { database } from '../../firebase-config';
 
-export async function getStaticProps(): TPageProps<IMainPageProps> {
+export const getStaticProps: GetStaticProps = async () => {
   const highlightsCol = await collection(database, 'highlights');
   const highlightsSnapshot = await getDocs(highlightsCol);
 
@@ -15,7 +13,8 @@ export async function getStaticProps(): TPageProps<IMainPageProps> {
 
   return {
     props: { highlightsListData: highlights },
+    revalidate: 5,
   };
-}
+};
 
 export default MainPage;
