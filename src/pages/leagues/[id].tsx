@@ -1,6 +1,6 @@
 /* eslint-disable */
 import LeaguePage from '@containers/League';
-import { collection, getDocs, where, query } from 'firebase/firestore';
+import { collection, getDocs, where, query, limit } from 'firebase/firestore';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { database } from '../../../firebase-config';
@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const leaguesRef = await collection(database, 'highlights');
 
-  const q = query(leaguesRef, where('name', '==', id));
+  const q = query(leaguesRef, where('name', '==', id), limit(20));
   const leagueSnapshot = await getDocs(q);
 
   // @ts-ignore
