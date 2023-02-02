@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { highlightsListData: highlights },
-    revalidate: 5,
+    revalidate: 600,
   };
 };
 

@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   return {
     props: { data: highlights },
-    revalidate: 5
+    revalidate: 600
   };
 };
 
