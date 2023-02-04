@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const leaguesRef = await collection(database, 'highlights');
 
-  const q = query(leaguesRef, where('link', '==', id), limit(20));
+  const q = query(leaguesRef, where('name', '==', id), limit(20));
   const leagueSnapshot = await getDocs(q);
 
   // @ts-ignore

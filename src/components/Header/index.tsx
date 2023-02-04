@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import Logo from '@components//Logo';
@@ -7,6 +7,11 @@ import Menu from '@components/Menu';
 
 const Header: FC = () => {
   const [menuActive, setMenuActive] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (menuActive) document.body.classList.add('menu-open');
+    else document.body.classList.remove('menu-open');
+  }, [menuActive]);
 
   const router = useRouter();
 

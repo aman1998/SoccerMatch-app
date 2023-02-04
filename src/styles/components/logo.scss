@@ -29,6 +29,8 @@
 .logo-wrapper {
   display: flex;
   align-items: center;
+  width: max-content;
+  cursor: pointer;
 }
 
 .logo-text {
