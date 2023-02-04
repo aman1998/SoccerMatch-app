@@ -8,12 +8,12 @@ export interface IBestHighlightsData {
 
 export interface IHighlightsData {
   title: string;
-  score: string;
   embedUrl: string;
   imgUrl: string;
   type: string;
   name: string;
   time: string;
+  isBest: boolean;
 }
 
 export interface IHighlightsList extends TRequestHandler<IHighlightsData> {

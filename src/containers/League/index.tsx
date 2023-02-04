@@ -10,10 +10,10 @@ import { getCountryTranslate } from '@utils/language';
 const League: NextPage<ILeaguePageProps> = ({ data }) => {
   const router = useRouter();
 
-  const title = getCountryTranslate(String(router.query.id));
+  const title = getCountryTranslate(String(router.query.leagueID));
 
   return (
-    <Layout title={`${title} - футбольные обзоры`} showInfo={false}>
+    <Layout title={`${title} - футбольные обзоры`}>
       <CardList list={data} />
     </Layout>
   );

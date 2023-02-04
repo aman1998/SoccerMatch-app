@@ -8,10 +8,10 @@ const CardList: FC<{ list: ICardProps[] }> = ({ list }) => (
     {!!list.length ? (
       list.map((item: ICardProps, index: number) => (
         <Card
+          isBest={item.isBest}
           key={index}
           embedUrl={item.embedUrl}
           title={item.title}
-          score={item.score}
           imgUrl={item.imgUrl}
           type={item.type}
           name={item.name}

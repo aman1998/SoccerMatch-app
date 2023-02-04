@@ -16,7 +16,7 @@ const Video: NextPage = () => {
   const id = router.query.id as string;
 
   return (
-    <Layout title="Обзор матча" showInfo={false}>
+    <Layout title="Обзор матча">
       <Youtube embedId={id} />
     </Layout>
   );

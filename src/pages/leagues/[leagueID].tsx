@@ -6,13 +6,13 @@ import { NextParsedUrlQuery } from 'next/dist/server/request-meta';
 import { database } from '../../../firebase-config';
 
 interface IParams extends NextParsedUrlQuery {
-  leagueId: string;
+  leagueID: string;
 }
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
     params: {
-      leagueId: item,
+      leagueID: item,
     },
   })),
   fallback: false,
@@ -21,11 +21,11 @@ export const getStaticPaths: GetStaticPaths = () => ({
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext<NextParsedUrlQuery>
 ) => {
-  const { leagueId } = context.params as IParams;
+  const { leagueID } = context.params as IParams;
 
   const leaguesRef = await collection(database, 'highlights');
 
-  const q = query(leaguesRef, where('name', '==', leagueId), limit(20));
+  const q = query(leaguesRef, where('name', '==', leagueID), limit(20));
   const leagueSnapshot = await getDocs(q);
 
   // @ts-ignore

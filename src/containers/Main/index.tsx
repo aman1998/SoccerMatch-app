@@ -4,10 +4,12 @@ import { IMainPageProps } from '@containers/Main/types';
 import Layout from '@components/Layout';
 import CardList from '@components/CardList';
 import { sitename } from '@components/Layout/consts';
+import Info from '@components/Layout/Info';
 
-const Main: NextPage<IMainPageProps> = ({ highlightsListData }) => (
+const Main: NextPage<IMainPageProps> = ({ highlights, bestHighlights }) => (
   <Layout title={`${sitename} - Футбольные обзоры`}>
-    <CardList list={highlightsListData} />
+    <Info bestHighlights={bestHighlights} />
+    <CardList list={highlights} />
   </Layout>
 );
 

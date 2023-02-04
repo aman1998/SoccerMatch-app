@@ -1,7 +1,7 @@
 import { IBestHighlightsData, IHighlightsData } from '@store/highlights/types';
 
 export interface IMainPageProps {
-  highlightsListData: IHighlightsData[];
+  highlights: IHighlightsData[];
   isFinish: boolean;
-  bestHighlightsListData?: IBestHighlightsData[];
+  bestHighlights: IBestHighlightsData[];
 }
