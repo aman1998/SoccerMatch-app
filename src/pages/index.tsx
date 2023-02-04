@@ -1,8 +1,7 @@
 import MainPage from '@containers/Main';
 import { collection, getDocs, query, limit, where } from 'firebase/firestore';
 import { GetStaticProps } from 'next';
-
-import { database } from '../../firebase-config';
+import { database } from 'firebase-config';
 
 export const getStaticProps: GetStaticProps = async () => {
   const limitCount = 12;

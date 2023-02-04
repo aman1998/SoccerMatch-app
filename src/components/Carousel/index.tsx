@@ -26,7 +26,7 @@ const Carousel: FC<ICarouselProps> = ({ children, activeIndex, setActiveIndex })
   return (
     <div className="carousel">
       <div className="carousel__inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {Children.map(children, (child) => cloneElement(child, { width: '100%' }))}
+        {Children.map(children, (child: any) => cloneElement(child, { width: '100%' }))}
       </div>
       {count > 1 && (
         <CarouselBtns

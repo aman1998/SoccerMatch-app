@@ -43,7 +43,6 @@
         "no-plusplus": 0,
         "no-continue": "off",
         "no-console": ["error", { "allow": ["warn", "error"] }],
-        "indent": ["error", 2],
         "guard-for-in": "off",
         "linebreak-style": "off",
         "no-restricted-syntax": "off",

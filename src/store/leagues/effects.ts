@@ -1,7 +1,6 @@
 import { takeLatest, all, AllEffect, ForkEffect, put } from 'redux-saga/effects';
 import { collection, getDocs } from 'firebase/firestore';
-
-import { database } from '../../../firebase-config';
+import { database } from 'firebase-config';
 
 import { getLeaguesData, getLeaguesFetching, getLeaguesError } from './reducers';
 
