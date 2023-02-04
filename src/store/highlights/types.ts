@@ -1,5 +1,11 @@
 import { TNullable, TRequestHandler } from '@config/types';
 
+export interface IBestHighlightsData {
+  embedUrl: string;
+  imgUrl: string;
+  title: string;
+}
+
 export interface IHighlightsData {
   title: string;
   embedUrl: string;
