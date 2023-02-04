@@ -6,28 +6,11 @@ import { highlightsListLatestDocSelector } from '@store/highlights/selectors';
 import { database } from '../../../firebase-config';
 
 import {
-  getBestHighlightsFetching,
-  getBestHighlightsData,
-  getBestHighlightsError,
   getHighlightsData,
   getHighlightsError,
   getHighlightsFetching,
   getHighlightsFinish,
 } from './reducers';
-
-function* getBestHighlightsList() {
-  try {
-    // @ts-ignore
-    const bestCol = yield collection(database, 'bestHighlights');
-    // @ts-ignore
-    const bestSnapshot = yield getDocs(bestCol);
-    const data = bestSnapshot.docs.map((doc: any) => doc.data());
-
-    yield put(getBestHighlightsData(data));
-  } catch (error) {
-    yield put(getBestHighlightsError('error'));
-  }
-}
 
 function* getHighlightsList() {
   try {
@@ -53,7 +36,6 @@ function* getHighlightsList() {
 }
 
 function* Saga(): Generator<AllEffect<ForkEffect<never>>, void, unknown> {
-  yield all([takeLatest(getBestHighlightsFetching.type, getBestHighlightsList)]);
   yield all([takeLatest(getHighlightsFetching.type, getHighlightsList)]);
 }
 

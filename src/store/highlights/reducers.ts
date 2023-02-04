@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { IBestHighlightsData, IHighlightsData, IHighlightsState } from '@store/highlights/types';
+import { IHighlightsData, IHighlightsState } from '@store/highlights/types';
 import { IPayloadAction } from '@store/types';
 import { defaultState } from '@store/consts';
 
 const initialState: IHighlightsState = {
-  bestHighlightsList: defaultState,
   highlightsList: {
     ...defaultState,
     finish: false,
@@ -34,26 +33,10 @@ export const counterSlice = createSlice({
     getHighlightsError: (state: IHighlightsState, action) => {
       state.highlightsList.error = action.payload;
     },
-
-    getBestHighlightsFetching: (state: IHighlightsState) => {
-      state.bestHighlightsList.fetching = true;
-    },
-    getBestHighlightsData: (
-      state: IHighlightsState,
-      action: IPayloadAction<IBestHighlightsData[]>
-    ) => {
-      state.bestHighlightsList = { ...defaultState, data: action.payload };
-    },
-    getBestHighlightsError: (state: IHighlightsState, action) => {
-      state.bestHighlightsList = { ...defaultState, error: action.payload };
-    },
   },
 });
 
 export const {
-  getBestHighlightsData,
-  getBestHighlightsFetching,
-  getBestHighlightsError,
   getHighlightsError,
   getHighlightsFetching,
   getHighlightsData,
