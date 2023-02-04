@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { links } from '@components/Navigation/consts';
 import { ILink } from '@components/Navigation/types';
@@ -10,33 +11,42 @@ import { getCountryTranslate } from '@utils/language';
 
 import { IMenuProps } from './types';
 
-const Menu: FC<IMenuProps> = ({ menuActive, setMenuActive }) => (
-  <div
-    className={classNames('menu', {
-      'menu--active': menuActive,
-    })}
-    onClick={() => setMenuActive(false)}
-  >
-    <div className="menu__content" onClick={(e): void => e.stopPropagation()}>
-      <Logo />
-      <nav className="menu-navigation">
-        <ul>
-          {links.map((item: ILink) => (
-            <li key={item.id} className="menu-navigation__item">
-              <Link
-                prefetch={false}
-                href={`/leagues/${item.link}`}
-                className="menu-navigation__link"
-                onClick={() => setMenuActive(false)}
+const Menu: FC<IMenuProps> = ({ menuActive, setMenuActive }) => {
+  const router = useRouter();
+
+  return (
+    <div
+      className={classNames('menu', {
+        'menu--active': menuActive,
+      })}
+      onClick={() => setMenuActive(false)}
+    >
+      <div className="menu__content" onClick={(e): void => e.stopPropagation()}>
+        <Logo />
+        <nav className="menu-navigation">
+          <ul>
+            {links.map((item: ILink) => (
+              <li
+                key={item.id}
+                className={classNames('menu-navigation__item', {
+                  'menu-navigation__item--active': router.asPath === `/leagues/${item.link}`,
+                })}
               >
-                {getCountryTranslate(item.link)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+                <Link
+                  prefetch={false}
+                  href={`/leagues/${item.link}`}
+                  className="menu-navigation__link"
+                  onClick={() => setMenuActive(false)}
+                >
+                  {getCountryTranslate(item.link)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Menu;

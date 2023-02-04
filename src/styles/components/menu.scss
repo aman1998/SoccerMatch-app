@@ -37,8 +37,12 @@
     &__item {
       margin-bottom: 8px;
       font-size: 20px;
-      &:hover {
+      &--active {
+        pointer-events: none;
         color: $green;
+      }
+      &:hover {
+        opacity: 0.8;
       }
     }
   }
