@@ -9,7 +9,7 @@ interface IParams extends NextParsedUrlQuery {
   leagueID: string;
 }
 
-export const getStaticPaths: GetStaticPaths = () => ({
+export const getStaticPaths: GetStaticPaths = async () => ({
   paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
     params: {
       leagueID: item,
