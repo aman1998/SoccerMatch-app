@@ -1,4 +1,3 @@
-/* eslint-disable */
 export const getCountryTranslate = (country: string): string => {
   switch (country.toLowerCase()) {
   case 'spain':

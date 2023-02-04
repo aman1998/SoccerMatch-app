@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Children, cloneElement, FC } from 'react';
 
 import CarouselBtns from '@components/Carousel/components/CarouselBtns';

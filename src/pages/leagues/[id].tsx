@@ -1,29 +1,31 @@
-/* eslint-disable */
 import LeaguePage from '@containers/League';
 import { collection, getDocs, where, query, limit } from 'firebase/firestore';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
+import { NextParsedUrlQuery } from 'next/dist/server/request-meta';
 
 import { database } from '../../../firebase-config';
 
-interface IParams {
-  id?: string;
+interface IParams extends NextParsedUrlQuery {
+  leagueId: string;
 }
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
     params: {
-      id: item,
+      leagueId: item,
     },
   })),
   fallback: false,
 });
 
-export const getStaticProps: GetStaticProps = async context => {
-  const { id } = context.params as IParams;
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext<NextParsedUrlQuery>
+) => {
+  const { leagueId } = context.params as IParams;
 
   const leaguesRef = await collection(database, 'highlights');
 
-  const q = query(leaguesRef, where('name', '==', id), limit(20));
+  const q = query(leaguesRef, where('name', '==', leagueId), limit(20));
   const leagueSnapshot = await getDocs(q);
 
   // @ts-ignore
@@ -31,7 +33,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   return {
     props: { data: highlights },
-    revalidate: 600
+    revalidate: 600,
   };
 };
 
