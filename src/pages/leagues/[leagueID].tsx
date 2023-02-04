@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async (
   const highlights = leagueSnapshot.docs.map((doc: any) => doc.data());
 
   return {
-    props: { data: highlights },
+    props: { highlights, leagueID },
     revalidate: 600,
   };
 };
