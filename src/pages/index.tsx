@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const highlightsCol = await collection(database, 'highlights');
   const q = query(highlightsCol, limit(12));
-  const qBest = query(highlightsCol, limit(3), where('isBest', '==', true));
+  const qBest = query(highlightsCol, limit(10), where('isBest', '==', true));
 
   const highlightsSnapshot = await getDocs(q);
   const bestHighlightsSnapshot = await getDocs(qBest);
