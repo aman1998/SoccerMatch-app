@@ -1,4 +1,6 @@
-import { TNullable, TRequestHandler } from '@config/types';
+import { OutputSelector, SelectorArray } from 'reselect';
+
+import { TRequestHandler } from '@config/types';
 
 export interface IBestHighlightsData {
   embedUrl: string;
@@ -16,11 +18,27 @@ export interface IHighlightsData {
   isBest: boolean;
 }
 
-export interface IHighlightsList extends TRequestHandler<IHighlightsData> {
+export type IFinish = {
   finish: boolean;
-  latestDoc: TNullable<IHighlightsData>;
+};
+
+export interface ILeaguesHighlightsPayload {
+  id: string;
+  data: IHighlightsData[];
+}
+
+export interface ILeaguesHighlightsError {
+  id: string;
+  error: string;
 }
 
 export interface IHighlightsState {
-  highlightsList: IHighlightsList;
+  highlightsList: IFinish & TRequestHandler<IHighlightsData>;
+  leaguesHighlights: Record<string, TRequestHandler<IHighlightsData> & IFinish>;
 }
+
+export type THighlightsOutputSelector<T> = OutputSelector<
+  SelectorArray,
+  T,
+  (s: IHighlightsState) => T
+>;
