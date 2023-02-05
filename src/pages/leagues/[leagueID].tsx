@@ -10,19 +10,12 @@ interface IParams extends NextParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  // paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
-  //   params: {
-  //     leagueID: item,
-  //   },
-  // })),
-  paths: [
-    { params: { leagueID: 'england' } },
-    { params: { leagueID: 'spain' } },
-    { params: { leagueID: 'italy' } },
-    { params: { leagueID: 'germany' } },
-    { params: { leagueID: 'france' } },
-  ],
-  fallback: false,
+  paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
+    params: {
+      leagueID: item,
+    },
+  })),
+  fallback: 'blocking',
 });
 
 export const getStaticProps: GetStaticProps = async (
