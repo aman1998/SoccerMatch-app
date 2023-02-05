@@ -1,1 +1,1 @@
-export const sitename = 'Highlightss';
+export const sitename = 'HHighlights';
