@@ -39,7 +39,7 @@
       font-size: 20px;
       &--active {
         pointer-events: none;
-        color: $green;
+        color: $color-main;
       }
       &:hover {
         opacity: 0.8;

@@ -22,7 +22,7 @@
       text-decoration: none;
       @media screen and ('min-width': $x-media) {
         &:hover {
-          color: $green;
+          color: $color-main;
           text-decoration: underline;
         }
       }
@@ -46,14 +46,10 @@
       width: 40px;
       border-radius: 50%;
       text-decoration: none;
-      color: $font;
+      color: $black;
       transition: 0.3s;
       cursor: pointer;
-      @media screen and ('min-width': $x-media) {
-        &:hover {
-          background: $green;
-        }
-      }
+      background: $color-main;
     }
   }
   &__left {

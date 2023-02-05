@@ -35,7 +35,7 @@
     opacity: 0.1;
   }
   .card__corner {
-    background-color: $green;
+    background-color: $color-main;
     height: 100%;
     width: 16px;
     padding-right: 9px;
@@ -50,7 +50,7 @@
     margin-top: 9px;
   }
   &:hover {
-    border: 1px solid $green;
+    border: 1px solid $color-main;
     .card__corner {
       margin-right: -12px;
     }
