@@ -13,7 +13,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <NextNProgress
-        color="#1e9e70"
+        color="#eabf10"
         height={1}
         showOnShallow={true}
         options={{ showSpinner: false }}

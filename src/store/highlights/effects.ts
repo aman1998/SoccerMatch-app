@@ -72,7 +72,6 @@ function* getLeagueHighlights(action: IPayloadAction<string>) {
 
     leagueHighlightsLatestDoc[action.payload] = snapshot.docs[snapshot.docs.length - 1];
   } catch (error) {
-    console.log('error =>', error);
     yield put(getLeagueHighlightsError({ id: action.payload, error: 'error' }));
   }
 }
