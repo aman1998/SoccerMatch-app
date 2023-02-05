@@ -20,7 +20,7 @@ export const counterSlice = createSlice({
       state.highlightsList.fetching = true;
     },
     getHighlightsData: (state: IHighlightsState, action: IPayloadAction<IHighlightsData[]>) => {
-      state.highlightsList.data = action.payload;
+      state.highlightsList.data.push(...action.payload);
       state.highlightsList.fetching = false;
       state.highlightsList.error = null;
     },

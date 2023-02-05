@@ -7,7 +7,11 @@ const selectState = (state: IApplicationState) => state.highlights;
 
 export const highlightsListDataSelector = createSelector(
   selectState,
-  (highlights: IHighlightsState) => highlights.highlightsList.data
+  (highlights: IHighlightsState) => {
+    const newArr = [...highlights.highlightsList.data];
+    newArr.splice(0, 12);
+    return newArr;
+  }
 );
 
 export const highlightsListFinishSelector = createSelector(
