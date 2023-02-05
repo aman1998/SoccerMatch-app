@@ -23,8 +23,6 @@ const League: NextPage<ILeaguePageProps> = ({ highlights, leagueID }) => {
 
   const dispatch = useAppDispatch();
 
-  console.log('highlightsListFinish =>', highlightsListFetching);
-
   useScrollEvent({
     fetching: highlightsListFetching,
     finish: highlightsListFinish,
