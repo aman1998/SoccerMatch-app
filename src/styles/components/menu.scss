@@ -24,10 +24,16 @@
     @media screen and (max-width: $max-sm-media) {
       padding-top: 24px;
       width: 100%;
+      .logo-wrapper {
+        display: none;
+      }
     }
   }
   &-navigation {
     margin-top: 20px;
+    @media screen and (max-width: $max-sm-media) {
+      margin-top: 54px;
+    }
     ul {
       display: flex;
       flex-direction: column;

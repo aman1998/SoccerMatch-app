@@ -13,5 +13,8 @@
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    @media screen and (max-width: $max-sm-media) {
+      z-index: $i-burger;
+    }
   }
 }

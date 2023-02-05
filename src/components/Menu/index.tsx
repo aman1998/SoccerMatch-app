@@ -25,6 +25,20 @@ const Menu: FC<IMenuProps> = ({ menuActive, setMenuActive }) => {
         <Logo />
         <nav className="menu-navigation">
           <ul>
+            <li
+              className={classNames('menu-navigation__item', {
+                'menu-navigation__item--active': router.asPath === `/`,
+              })}
+            >
+              <Link
+                prefetch={false}
+                href={`/`}
+                className="menu-navigation__link"
+                onClick={() => setMenuActive(false)}
+              >
+                Главная
+              </Link>
+            </li>
             {links.map((item: ILink) => (
               <li
                 key={item.id}
