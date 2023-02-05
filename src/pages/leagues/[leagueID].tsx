@@ -10,11 +10,18 @@ interface IParams extends NextParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
-    params: {
-      leagueID: item,
-    },
-  })),
+  // paths: ['england', 'spain', 'italy', 'germany', 'france'].map((item: string) => ({
+  //   params: {
+  //     leagueID: item,
+  //   },
+  // })),
+  paths: [
+    { params: { leagueID: 'england' } },
+    { params: { leagueID: 'spain' } },
+    { params: { leagueID: 'italy' } },
+    { params: { leagueID: 'germany' } },
+    { params: { leagueID: 'france' } },
+  ],
   fallback: false,
 });
 
@@ -30,6 +37,12 @@ export const getStaticProps: GetStaticProps = async (
 
   // @ts-ignore
   const highlights = leagueSnapshot.docs.map((doc: any) => doc.data());
+
+  if (!['england', 'spain', 'italy', 'germany', 'france'].includes(leagueID)) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: { highlights, leagueID },
